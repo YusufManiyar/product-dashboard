@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Product Dashboard</title>
+</head>
+<body>
+  <h1>Product Dashboard</h1>
+  <form id="my-form">
+    <label1>Selling Price:</label1>
+    <input type="number" id="price" name="price" placeholder="Enter Price " required>
+    <label>Product Name:</label>
+    <input type="text" id="product" name="product" placeholder="Enter Product" required>
+    <label for="categories">category:</label>
+    <select id="categories" name="categories" required>
+      <option value="Electronics">Electronics</option>
+      <option value="Food">Food</option>
+      <option value="SkinCare">Skin Care</option>
+    </select>
+    <input type="submit" id="save" value="Add Product" >
+  </form>
+  <h1>Product catalog</h1>
+  <h2>Electronic Items</h2>
+  <ul id="Electronics">
+
+  </ul>
+  <h2>Food Items</h2>
+  <ul id="Food">
+
+  </ul>
+  <h2>SkinCare Items</h2>
+  <ul id="SkinCare">
+
+  </ul>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="index.js" ></script>
+</html>
