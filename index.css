@@ -1,0 +1,13 @@
+*{
+    text-align: center;
+}
+
+.table{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.catalog{
+    text-align: center;
+}

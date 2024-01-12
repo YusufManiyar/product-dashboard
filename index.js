@@ -10,7 +10,7 @@ async function listProducts(){
     try {
 
 
-        const response = await axios.get("https://crudcrud.com/api/9357b138d42944f0b26e7fc65214cc7e/products")
+        const response = await axios.get("https://crudcrud.com/api/114b2cf74fcd4ce39dedf4e0e54c71d4/products") 
         response.data.forEach(product => {
             
             if (!document.getElementById(product._id)) {
@@ -36,9 +36,13 @@ async function listProducts(){
 async function removeProduct(e) {
     e.preventDefault()
     try {
-        let parent = e.target.parentElement
-        await axios.delete(`https://crudcrud.com/api/9357b138d42944f0b26e7fc65214cc7e/products/${parent.id}`)
-        await listProducts()
+        if(e.target.classList.contains('delete') && confirm('Are You Sure?')){
+            let parent = e.target.parentElement
+            await axios.delete(`https://crudcrud.com/api/114b2cf74fcd4ce39dedf4e0e54c71d4/products/${parent.id}`)
+            const list = document.querySelector(`#${parent.parentElement.id}`)
+            list.removeChild(parent)
+        }
+        // console.log(parent.parentElement)
     }
     catch(error) {
         console.log(error.toString())
@@ -54,7 +58,7 @@ function addProduct(e) {
         category: `${categoriesInput.value}`
       }
       
-    axios.post("https://crudcrud.com/api/9357b138d42944f0b26e7fc65214cc7e/products", productObj)
+    axios.post("https://crudcrud.com/api/114b2cf74fcd4ce39dedf4e0e54c71d4/products", productObj)
     .then(async (res) => {
         await listProducts()
     }).catch((err) => {
